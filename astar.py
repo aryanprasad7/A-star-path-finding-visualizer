@@ -236,14 +236,14 @@ def main(win, width):
                     end = None
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE and start and end:
+                if event.key == pygame.K_SPACE and start and end:   # pressing the SPACE key to start the algorithm
                     for row in grid:
                         for spot in row:
                             spot.update_neighbors(grid)
 
                     algorithm(lambda: draw(win, grid, ROWS, width), grid, start, end)
 
-                if event.key == pygame.K_c:
+                if event.key == pygame.K_c:     # pressing the 'c' key to clear the screen
                     start = None
                     end = None
                     grid = make_grid(ROWS, width)
